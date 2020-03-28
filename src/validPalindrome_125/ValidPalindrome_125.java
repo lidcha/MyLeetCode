@@ -15,15 +15,16 @@ import junitTest.ValidPalindromeTest;
  * @createDate ：2020年3月28日
  */
 public class ValidPalindrome_125 {
-	
+
 	public static boolean isPalindrome_v1(String s) {
-		//replaceAll方法返回的是替换下来的值，源字符串并不变，而是一个新字符串
-        String actual = s.replaceAll("[^A-Za-z0-9]", "").toLowerCase();
-        String rev = new StringBuffer(actual).reverse().toString();
-        return actual.equals(rev);
-    }
-	
-	
+		/*
+		 * replaceAll方法返回的是替换下来的值，源字符串并不变，而是一个新字符串
+		 */
+		String actual = s.replaceAll("[^A-Za-z0-9]", "").toLowerCase();
+		String rev = new StringBuffer(actual).reverse().toString();
+		return actual.equals(rev);
+	}
+
 	public static boolean isValid(Character c) {
 		if (c == null)
 			return false;
@@ -49,7 +50,8 @@ public class ValidPalindrome_125 {
 			} else {
 				if (charLeft != charRight)
 					return false;
-				i++;j--;
+				i++;
+				j--;
 			}
 		}
 		return true;
@@ -57,6 +59,6 @@ public class ValidPalindrome_125 {
 
 	@Test
 	public void testIsPalindrome_v1() {
-		assertEquals(true,new ValidPalindrome_125().isPalindrome_v1("A man, a plan, a canal: Panama"));
+		assertEquals(true, new ValidPalindrome_125().isPalindrome_v1("A man, a plan, a canal: Panama"));
 	}
 }
