@@ -1,4 +1,4 @@
-package MaximumSubarray_53;
+package maximumSubarray_53;
 
 /**
  * @description：leetcode problem 53.Maximum Subarray
