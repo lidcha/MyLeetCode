@@ -17,6 +17,7 @@ import org.junit.Test;
  */
 public class Solution {
 	/*
+	 * 
 	 * 异或：相同位0相异为1；同0异1； AND: 只有同时为1结果才为1；用于判断同时为1，然后左移1位
 	 */
 	public int sumOfTwoInteger(int a, int b) {
