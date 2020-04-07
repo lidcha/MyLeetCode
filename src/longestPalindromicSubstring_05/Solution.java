@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import sun.util.logging.resources.logging;
+
 /**
  * @description
  * @createDate ：2020年4月7日
@@ -48,11 +50,38 @@ public class Solution {
 		return str.substring(start, start + length);
 	}
 
+	private int lo, maxlen;
+
+	public String longestPalindrome_v1(String s) {
+		int len = s.length();
+		if (len < 2)
+			return s;// 边界样例
+
+		for (int i = 0; i < len - 1; i++) {
+			// 下面两行语句将字符串中的最开始的回文枚举，有点类似动态规划中的初始化dp数组
+			extendPalindrome(s, i, i);// 假设是奇数
+			extendPalindrome(s, i, i + 1);// 假设偶数
+		}
+		return s.substring(lo, lo + maxlen);
+	}
+
+	public void extendPalindrome(String s, int j, int k) {
+		while (j >= 0 && k < s.length() && s.charAt(j) == s.charAt(k)) {// 判断是否出界，且两侧字符是否相同
+			// 若相同，则不断往外延伸
+			j--;
+			k++;
+		}
+		if (maxlen < k - j - 1) {// 此处的k-j-1是化简以后的，应该是k-1-(j+1)+1,为字符串长度
+			lo = j + 1;
+			maxlen = k - j - 1;
+		}
+	}
+
 	/*
-	 * junit测试	
+	 * junit测试
 	 */
 	@Test
 	public void test() {
-		assertEquals("ccc", new Solution().longestPalindrome("ccc"));
+		assertEquals("ccc", new Solution().longestPalindrome_v1("ccc"));
 	}
 }
