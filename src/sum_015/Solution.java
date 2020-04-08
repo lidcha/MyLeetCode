@@ -58,4 +58,11 @@ public class Solution {
 		}
 		return res;
 	}
+	/*
+	 * junit测试
+	 */
+	@Test
+	public void test(){
+		
+	}
 }
