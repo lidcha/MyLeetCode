@@ -10,6 +10,9 @@ import org.junit.Test;
 */
 public class ValidPalindromeTest {
 
+	public static void main(String[] args) {
+	}
+	
 	@Test
 	public void testIsPalindrome_v1() {
 		assertEquals(true,new ValidPalindromeTest());
