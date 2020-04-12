@@ -12,7 +12,7 @@ import com.sun.org.apache.xml.internal.security.utils.HelperNodeList;
  * @createDate ：2020年4月12日
  */
 public class Solution {
-	
+
 	/*
 	 * 所谓回溯法，需要多看看
 	 */
@@ -32,11 +32,11 @@ public class Solution {
 			res.add(new ArrayList<>(list));
 			return;
 		}
-		for (int i = 0; i < candiates.length; i++) {
+		for (int i = index; i < candiates.length; i++) {
 			if (sum + candiates[i] <= target) {
 				list.add(candiates[i]);
-				helper(candiates, list, target, sum, i);
-				list.remove(list.size()-1);
+				helper(candiates, list, target, sum + candiates[i], i);
+				list.remove(list.size() - 1);
 			} else
 				break;
 		}
