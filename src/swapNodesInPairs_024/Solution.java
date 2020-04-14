@@ -1,6 +1,5 @@
 package swapNodesInPairs_024;
 
-import static org.hamcrest.CoreMatchers.nullValue;
 
 /**
  * @description

@@ -1,6 +1,5 @@
 package addTwoNumbers_02;
 
-import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;

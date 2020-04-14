@@ -1,6 +1,5 @@
 package inverseBinaryTree_226;
 
-import static org.hamcrest.CoreMatchers.nullValue;
 
 import java.util.Stack;
 
