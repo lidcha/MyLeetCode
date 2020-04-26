@@ -24,8 +24,9 @@ public class Solution {
     public boolean canJump(int[] nums){
         int max = 0;
         for(int i=0;i<nums.length;i++){
-            if(max<i)   return false;
-            max = Math.max(nums[i]+i, max);
+            if(max<i)   return false;   //通过max与当前位置index比较，max表示之前步骤能到达的最远，
+                                        //若max<i则表示之前步骤最远走不到当前位置
+            max = Math.max(nums[i]+i, max); //nums[i]+i表示从当前位置i能走到的最远位置
         }
         return max>=(nums.length-1);
     }
